@@ -1,0 +1,92 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+@import "base"
+
+$base-font-size: 16px
+$base-line-height: 6px
+@function em($px, $base: $base-font-size)
+  @return ($px / $base) * 1em
+
+//this is the default number of columns
+$total-columns: 5
+
+//width of each column
+$column-width   : 4em
+
+//space between columns
+$gutter-width   : 1em
+
+//space on the right and left of the grid
+$grid-padding   : $gutter-width
+
+//alternative layout breakpoints
+$tablet: 8
+$computer: 55em 12
+
+
+$container-style: fluid
+@include establish-baseline
+
+html
+  @include adjust-leading-to(4)
+
+
+body
+  font-family: Helvetica !important
+
+
+
+#site
+
+  // Header
+  header
+    @include container($total-columns, $tablet, $computer)
+
+    background: black
+    // @include debug-vertical-alignment()
+    color: white
+    position: fixed
+    top: 0
+    width: 100%
+
+    // site title container
+    div#site-title
+
+      @include adjust-font-size-to(42px)
+      // on mobile the title take all width
+      @include span-columns(5 omega)
+
+      // computer style for computer
+      @include at-breakpoint($computer)
+        @include span-columns(5)
+
+
+    nav#nav-bar
+      @include vertical-align(em(24px), middle, left)
+      @include span-columns(5 omega)
+      @include at-breakpoint($tablet)
+        ul li
+          float: left
+          list-style-type: none
+          margin: 0 0.7em 0 0
+          padding: 0
+
+      // computer style for nav-bar
+      @include at-breakpoint($computer)
+        @include span-columns(7 omega)
+
+
+  div#body
+    margin: 50px 0 0
+

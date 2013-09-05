@@ -1,0 +1,23 @@
+!!!
+%html
+  %head
+    %title Kanbanboard
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    #site
+
+      %header
+        #site-title KANBANboard
+        %nav#nav-bar
+          %ul
+            %li 
+              = link_to "Accueil", root_path
+            %li 
+      #body
+        %p.notice 
+          = notice
+        %p.alert 
+        = alert
+        = yield
