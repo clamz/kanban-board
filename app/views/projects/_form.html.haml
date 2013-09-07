@@ -5,12 +5,7 @@
       %ul
         - @project.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :users
-    = f.text_field :users
+  = render_cell :form, :form_row, :field => f, :name => :name
+ 
   .actions
     = f.submit 'Save'

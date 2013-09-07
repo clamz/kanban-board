@@ -4,7 +4,8 @@
 @import "sassy-buttons";
 @import "compass/typography/vertical_rhythm";
 
+@import "include/variables";
 
-
-
-
+@function em($px, $base: $base-font-size){
+  @return ($px / $base) * 1em;
+}

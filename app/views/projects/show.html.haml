@@ -3,9 +3,10 @@
 %p
   %b Name:
   = @project.name
-%p
-  %b Users:
-  = @project.users
+%div
+  - @project.projectsUser.each do |projectUser|
+    %div 
+      = projectUser.role
 
 = link_to 'Edit', edit_project_path(@project)
 \|

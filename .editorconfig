@@ -2,8 +2,12 @@ root = true
 
 [*]
 indent_style = space
-indent_size = 4
+indent_size = 2
 
 [*.sass]
+indent_style = space
+indent_size = 2
+
+[*.haml]
 indent_style = space
 indent_size = 2
