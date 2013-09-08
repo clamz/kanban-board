@@ -39,7 +39,8 @@ group :assets do
 	gem 'compass-rails', github: "Compass/compass-rails", branch: "rails4-hack"
 	gem 'susy'
 	gem 'sassy-buttons'
-  gem 'compass-recipes'
+    gem 'compass-recipes'
+    gem "js-routes"
 end
 
 

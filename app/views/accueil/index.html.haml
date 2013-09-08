@@ -1,2 +1,9 @@
-#btn-create-project 
-  = link_to "Nouveau projet", controller: "projects", action: "new"
+#toolbar
+  %select#projects-list
+    %option
+    - @projects.each do |p|
+      %option{:value => p.id } #{p.name}
+  #btn-create-project 
+    = link_to "Nouveau projet", controller: "projects", action: "new"
+#content
+  

@@ -2,9 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "include/base"
-div#btn-create-project
-    @include sassy-button($sb-gradient-style, 0, $base-font-size, #a7bf35, #a7bf35)
-    margin: 0 em(5px)
-    a
-        text-decoration: none
-        color: $linkColor
+div#body div#toolbar
+    select#projects-list
+        width: em(250px)
+    margin: em(5px) 0
+    div#btn-create-project
+        @include sassy-button($sb-gradient-style, 0, $base-font-size, #a7bf35, #a7bf35)
+        a
+            text-decoration: none
+            color: $linkColor
+            &:hover
+                background-color: none
